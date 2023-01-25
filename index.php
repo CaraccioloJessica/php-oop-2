@@ -1,6 +1,8 @@
 <?php
 
 class Product
+// variabili
+
 {
   private $name;
   private $type;
@@ -8,7 +10,8 @@ class Product
   private $description;
   private $price;
 
-  function __construct($name, $type, $category, $description, $price)
+  // costruttori
+  public function __construct($name, $type, $category, $description, $price)
   {
     $this->setName($name);
     $this->setType($type);
@@ -71,6 +74,15 @@ class Product
   {
     return $this->price;
   }
+
+  public function getHtml()
+  {
+    return 'Nome: ' . $this->getName() . '<br>' .
+      'Tipologia: ' . $this->getType() . '<br>' .
+      'Categoria: ' . $this->getCategory() . '<br>' .
+      'Descrizione: ' . $this->getDescription() . '<br>' .
+      'Prezzo: ' . $this->getPrice() . '<br>';
+  }
 }
 
 // prodotto random per prova stampa in pagina
@@ -78,8 +90,4 @@ $products = new Product('palla', 'palla in gomma', 'cani', 'safnjsdngjdfngbjfnb'
 // controllo funzionalità
 // var_dump($products);
 
-echo 'Nome: ' . $products->getName() . '<br>';
-echo 'Tipologia: ' . $products->getType() . '<br>';
-echo 'Categoria: ' . $products->getCategory() . '<br>';
-echo 'Descrizione: ' . $products->getDescription() . '<br>';
-echo 'Prezzo: ' . $products->getPrice() . '<br>';
+echo $products->getHtml();
