@@ -76,4 +76,10 @@ class Product
 // prodotto random per prova stampa in pagina
 $products = new Product('palla', 'palla in gomma', 'cani', 'safnjsdngjdfngbjfnb', '20$');
 // controllo funzionalità
-var_dump($products);
+// var_dump($products);
+
+echo 'Nome: ' . $products->getName() . '<br>';
+echo 'Tipologia: ' . $products->getType() . '<br>';
+echo 'Categoria: ' . $products->getCategory() . '<br>';
+echo 'Descrizione: ' . $products->getDescription() . '<br>';
+echo 'Prezzo: ' . $products->getPrice() . '<br>';
